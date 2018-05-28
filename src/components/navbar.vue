@@ -40,6 +40,14 @@
       {{$t("navbar.charts")}}
       </menu-item>
     </router-link>
+    <router-link v-if="developMode" to="dashboard" replace>
+      <menu-item name="dashboard">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-dashboard"></use>
+        </svg>
+      {{$t("navbar.dashboard")}}
+      </menu-item>
+    </router-link>
     <Button v-if="this.$route.path === '/custom'" class="downloadButton" type="primary" shape="circle" icon="android-download" @click="clickEvent">{{$t("navbar.download")}}</Button>
   </i-menu>
 </template>
@@ -48,7 +56,8 @@ import iconfont from '../main.js'
 export default {
   data() {
     return {
-      activeName: 'top'
+      activeName: 'top',
+      developMode: process.env.NODE_ENV === 'development'
     }
   },
   beforeMount() {
