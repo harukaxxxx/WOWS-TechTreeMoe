@@ -104,7 +104,7 @@ import intro from './router/intro.vue'
 import custom from './router/custom.vue'
 import about from './router/about.vue'
 import charts from './router/charts.vue'
-import dashboard from './router/dashboard.vue'
+import dashboard from './router/database.vue'
 
 /*
 * components
