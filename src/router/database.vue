@@ -49,29 +49,28 @@ import iconfont from '../main.js'
 export default {
   data() {
     return {
-      shipDatabase: {},
-      shipData: {}
+      shipDatabase: {}
     }
   },
-  beforeCreate() {
+  created() {
     axios
       .post(
         `https://api.worldofwarships.asia/wows/encyclopedia/ships/?application_id=demo
-    &language=zh-tw
-    &fields=name,nation,is_premium,images,ship_id_str,tier,type`
+        &language=zh-tw
+        &fields=name,nation,is_premium,images,ship_id_str,tier,type`
       )
       .then(res => {
         const data = res.data.data
+        let shipDatabase = {}
         Object.keys(data).map(dataKey => {
           const nation = data[dataKey].nation
           const id = data[dataKey].ship_id_str
-          // this.shipData[id]
           const name = data[dataKey].name
           const tier = data[dataKey].tier
           const type = data[dataKey].type
           const premium = data[dataKey].is_premium
           const imgUrl = data[dataKey].images.small
-          this.shipDatabase[id] = {
+          shipDatabase[id] = {
             id,
             name,
             nation,
@@ -85,50 +84,21 @@ export default {
       .catch(error => {
         console.log(error.message)
       })
+    this.nextTick().then(function() {
+      this.shipDatabase = shipDatabase
+    })
 
-    axios
+    /* axios
       .get('/static/database/shipData.json')
       .then(res => {
         this.shipData = res.data
       })
       .catch(error => {
         console.log(error.message)
-      })
+      }) */
   },
   methods: {
-    checkOrigin: function() {
-      axios
-        .post(
-          `https://api.worldofwarships.asia/wows/encyclopedia/ships/?application_id=demo
-    &language=zh-tw
-    &fields=name,nation,is_premium,images,ship_id_str,tier,type`
-        )
-        .then(res => {
-          const data = res.data.data
-          Object.keys(data).map(dataKey => {
-            const nation = data[dataKey].nation
-            const id = data[dataKey].ship_id_str
-            // this.shipData[id]
-            const name = data[dataKey].name
-            const tier = data[dataKey].tier
-            const type = data[dataKey].type
-            const premium = data[dataKey].is_premium
-            const imgUrl = data[dataKey].images.small
-            this.shipDatabase[id] = {
-              id,
-              name,
-              nation,
-              tier,
-              type,
-              premium,
-              imgUrl
-            }
-          })
-        })
-        .catch(error => {
-          console.log(error.message)
-        })
-    }
+    checkOrigin: function() {}
   }
 }
 </script>
