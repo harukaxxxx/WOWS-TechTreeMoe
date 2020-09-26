@@ -1546,9 +1546,6 @@
       "default": 1,
       "change": true,
       "premium": false,
-      "鋼鐵少女": {
-        "2": "【鋼鐵少女】黑姬"
-      },
       "同人作品": {
         "1": ["司马闹腾", "http://www.pixiv.net/member.php?id=7933104", "蔵王", "http://www.pixiv.net/member_illust.php?mode=medium&illust_id=59507584"]
       }
@@ -1612,6 +1609,19 @@
       "最終戰艦": {
         "16": "【最終戰艦】高雄",
         "17": "【最終戰艦】高雄 泳裝Ver."
+      }
+    },
+    "PJSC510": {
+      "id": "PJSC510",
+      "name": "吾妻",
+      "tier": "Ⅸ",
+      "nation": "japan",
+      "type": "cruiser",
+      "default": 1,
+      "change": false,
+      "premium": true,
+      "鋼鐵少女": {
+        "1": "【鋼鐵少女】黑姬"
       }
     },
     "PJSC503": {
@@ -2100,6 +2110,30 @@
       "高校艦隊": {
         "1": "【高校艦隊】岬 明乃"
       }
+    },
+    "PJSD718": {
+      "id": "PJSD718",
+      "name": "雪風",
+      "tier": "Ⅷ",
+      "nation": "japan",
+      "type": "destroyer",
+      "default": 1,
+      "change": true,
+      "premium": true,
+      "艦隊收藏": {
+        "1": "【艦隊收藏】雪風"
+      },
+      "碧藍航線": {
+        "2": "【碧藍航線】雪風",
+        "3": "【碧藍航線】雪風 鞦韆上的雪風大人Ver.",
+        "4": "【碧藍航線】雪風 春日的暖風Ver."
+      },
+      "戰艦少女": {
+        "5": "【戰艦少女】雪風"
+      },
+      "鋼鐵少女": {
+        "6": "【鋼鐵少女】雪風"
+      }
     }
   },
   "ussr": {
@@ -2278,8 +2312,8 @@
     }
   },
   "germany": {
-    "PGSA508": {
-      "id": "PGSA508",
+    "PGSA518": {
+      "id": "PGSA518",
       "name": "Graf Zeppelin",
       "tier": "Ⅷ",
       "nation": "germany",
